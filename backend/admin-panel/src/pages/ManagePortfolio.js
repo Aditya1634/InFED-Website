@@ -19,7 +19,7 @@ const ManagePortfolio = () => {
     const [schemes, setSchemes] = useState([]);
 
     useEffect(() => {
-        fetch('/api/get-schemes')
+        fetch('https://infed-website.onrender.com/api/get-schemes')
             .then((response) => {
                 if(!response.ok){
                     throw new Error('Network response was not ok');
@@ -36,7 +36,7 @@ const ManagePortfolio = () => {
     useEffect(() => {
         const fetchStartups = async () => {
             try {
-                const response = await fetch('/api/get-startups');
+                const response = await fetch('https://infed-website.onrender.com/api/get-startups');
                 const data = await response.json();
                 setStartups(data);
             } catch (error) {
@@ -66,8 +66,8 @@ const ManagePortfolio = () => {
 
         try {
             const url = startupId
-                ? `/api/update-startup/${startupId}`
-                : "/api/add-startup";
+                ? `https://infed-website.onrender.com/api/update-startup/${startupId}`
+                : "https://infed-website.onrender.com/api/add-startup";
             const method = startupId ? "PUT" : "POST";
 
             const response = await fetch(url, {

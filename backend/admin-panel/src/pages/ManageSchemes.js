@@ -75,8 +75,8 @@ const SchemeManager = () => {
 
         try {
             const url = schemeId
-                ? `/api/update-scheme/${schemeId}`
-                : "/api/add-scheme";
+                ? `https://infed-website.onrender.com/api/update-scheme/${schemeId}`
+                : "https://infed-website.onrender.com/api/add-scheme";
             const method = schemeId ? "PUT" : "POST";
 
             const response = await fetch(url, {
@@ -125,7 +125,7 @@ const SchemeManager = () => {
 
     const deleteScheme = async (id) => {
         try {
-            const response = await fetch(`/api/delete-scheme/${id}`, {
+            const response = await fetch(`/https://infed-website.onrender.comapi/delete-scheme/${id}`, {
                 method: 'DELETE',
             });
             const data = await response.json();

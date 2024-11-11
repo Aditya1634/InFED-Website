@@ -22,7 +22,7 @@ const ManageEvents = () => {
 
   const fetchEvents = async () => {
     try {
-      const response = await fetch('/api/get-events');
+      const response = await fetch('https://infed-website.onrender.com/api/get-events');
       if (response.ok) {
         const data = await response.json();
         setEvents(data);
@@ -77,8 +77,8 @@ const ManageEvents = () => {
     e.preventDefault();
     try {
       const url = editingId 
-        ? `/api/update-event/${editingId}`
-        : '/api/add-event';
+        ? `https://infed-website.onrender.com/api/update-event/${editingId}`
+        : 'https://infed-website.onrender.com/api/add-event';
       
       const method = editingId ? 'PUT' : 'POST';
       
